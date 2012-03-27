@@ -1,0 +1,8 @@
+name 'puppetlabs-solaris'
+version '0.0.1'
+source 'git@github.com:puppetlabs/puppetlabs-solaris.git'
+author 'puppetlabs'
+license 'Apache License, Version 2.0'
+summary 'solaris types, formerly part of the puppet core'
+description 'Manages solaris, formerly part of the puppet core'
+project_page 'http://forge.puppetlabs.com/puppetlabs/solaris'
