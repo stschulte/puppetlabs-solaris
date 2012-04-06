@@ -59,6 +59,7 @@ Puppet::Type.type(:zpool).provide(:solaris) do
   #Adds log and spare
   def build_named(name)
     if prop = @resource[name.intern]
+      prop = [prop] unless prop.is_a? Array
       [name] + prop.collect { |p| p.split(' ') }.flatten
     else
       []
@@ -78,6 +79,7 @@ Puppet::Type.type(:zpool).provide(:solaris) do
   #builds up the vdevs for create command
   def build_vdevs
     if disk = @resource[:disk]
+      disk = [disk] unless disk.is_a? Array
       disk.collect { |d| d.split(' ') }.flatten
     elsif mirror = @resource[:mirror]
       handle_multi_arrays("mirror", mirror)
